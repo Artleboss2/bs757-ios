@@ -1,0 +1,43 @@
+{
+  "_comment": "Brawl Stars 70.757 iOS arm64. Byte offsets unless prefixed *_va (module-relative). Leave values null: overlay boots resolve.js against the live process and measures the actor table, layout, matrix and hp store itself. Fill them only to pin a layout you have already confirmed with Frameworks/scan.js.",
+  "build": "70.757",
+  "bundle": "com.supercell.laser",
+  "modules": {
+    "main": "laser",
+    "logic": "Scid"
+  },
+  "world": {
+    "root_va": null,
+    "root_chain": [],
+    "actor_array": null,
+    "actor_stride": null,
+    "actor_max": 64,
+    "mode": "runtime"
+  },
+  "actor": {
+    "pos_x": null,
+    "pos_y": null,
+    "team": null,
+    "hp": null,
+    "max_hp": null,
+    "alive": null,
+    "bush_flag": null,
+    "radius": null
+  },
+  "camera": {
+    "view_proj_va": null,
+    "screen_w_off": null,
+    "screen_h_off": null
+  },
+  "hooks": {
+    "damage_entry_va": null,
+    "attack_command_va": null,
+    "tick_update_va": null
+  },
+  "notes": {
+    "damage_entry_va": "x0 = attacker, x1 = victim, w2 = damage int. Returns bool. FILL from xref on the victim HP subtract.",
+    "attack_command_va": "x0 = command struct; +0x00 aim_x float, +0x04 aim_y float. FILL from xref on the touch->command builder.",
+    "tick_update_va": "called once per logic frame; used as the overlay clock. FILL from the frame driver.",
+    "actor_array": "absolute pointer at runtime \u2014 never bake an allocation address into a file"
+  }
+}
