@@ -1,0 +1,16 @@
+# build dependencies
+node_modules/
+__pycache__/
+*.pyc
+
+# vendored binaries — fetched, not committed (see README)
+vendor/*.dylib
+vendor/*.xz
+
+# artifacts
+*.ipa
+*.bundle
+inject.log
+
+# local agent instructions
+AGENTS.md
